@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Login - TIA
+        </title>
+        <link rel="indexCSS" href="index.css">
+    </head>
+    <script>
+        function validateForm() {
+            var inputMatricula = document.forms["formTIA"]["fname"].value;
+            if (inputMatricula.length != 8) {
+                alert("Matricula não possui o número certo de digitos.")
+                return false
+            }
+            if (isNaN(inputMatricula)) {
+                alert("Matricula inserida não é um número.")
+                return false
+            }
+            return true
+        }
+    </script>
+    <body>
+        <h1>
+            TIA - Mackenzie
+        </h1>
+        <h3>
+            Acesso ao Terminal do Aluno
+        </h3>
+        <form name="formTIA" action="" onsubmit="return validateForm()">
+            <label for="matricula">
+                Matricula:
+            </label><br>
+            <input type="text" id="matricula" name="matricula"><br>
+            <label for="senha">
+                Senha:
+            </label><br>
+            <input type="text" id="senha" name="senha"><br>
+            <label for="campus">
+                Campus de Estudo
+            </label><br>
+            <select name="campus" id="campus" size="4">
+                <option value="campus1">Campus 1</option>
+                <option value="campus2">Campus 2</option>
+                <option value="campus3">Campus 3</option>
+                <option value="campus4">Campus 4</option>
+                <option value="campusHigienopolis">Campus Higienopolis</option>
+            </select><br>
+            <br>
+            <input type="submit" value="Submit">
+        </form><br>
+</html>
